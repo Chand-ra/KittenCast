@@ -7,6 +7,5 @@ build/
 .pytest_cache/
 venv/
 env/
-Audiobook_Output/
 *.wav
 *.epub
