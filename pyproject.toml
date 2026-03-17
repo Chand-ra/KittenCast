@@ -16,6 +16,8 @@ dependencies = [
     "numpy>=1.24.0",
     "soundfile>=0.12.1",
     "tqdm>=4.65.0",
+    "pypdf>=4.1.0",
+    "python-docx>=1.1.0",
     "kittentts @ https://github.com/KittenML/KittenTTS/releases/download/0.8.1/kittentts-0.8.1-py3-none-any.whl"
 ]
 
