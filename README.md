@@ -79,13 +79,12 @@ kittencast notes.docx -m KittenML/kitten-tts-mini-0.8 -d
 | `--model` | `-m` | KittenTTS Model: `nano-0.8`, `micro-0.8`, `mini-0.8` | `nano-0.8` |
 | `--dump-text`| `-d` | Saves the extracted text to `extracted_text_dump.txt` before generating audio. | `False` |
 
-## 🛠️ Architecture
+## 🛠️ Text Processing Scheme
 
-KittenCast is designed with modularity in mind:
-
-* **`cli.py`**: Handles user input and argument parsing.
-* **`text_utils.py`**: A router that directs files to their specific parsers and uses NLTK to intelligently chunk paragraphs into TTS-friendly payloads.
-* **`compiler.py`**: Orchestrates the KittenTTS generation loop, manages the audio arrays via NumPy, and writes the final `.wav` files.
+Documents are parsed into distinct "Sections," each of which correspond to a generated `.wav` file:
+* **`.epub`**: Parsed by chapter (ignoring artifact pages < 150 chars).
+* **`.pdf`**: Parsed page-by-page.
+* **`.docx` / `.txt`**: Parsed as a single continuous document.
 
 ## 🧪 Running Tests
 

@@ -15,7 +15,6 @@ def build_audiobook(input_path: str, output_dir: str, voice: str, model_name: st
         print("Error: No readable text found in the document.")
         return
 
-    # --- NEW: Text Dumping Logic ---
     if dump_text:
         dump_path = os.path.join(output_dir, "extracted_text_dump.txt")
         print(f"Dumping processed text to {dump_path}...")
